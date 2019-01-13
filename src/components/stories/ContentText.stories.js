@@ -16,6 +16,14 @@ storiesOf("ContentText", module)
       onClick={action("clicked")}
     />
   ))
+  .add("with a like", () => (
+    <ContentText
+      totalLikes={1}
+      username="eric.chef"
+      text="This is delicious @beefresto #meat #grilled"
+      onClick={action("clicked")}
+    />
+  ))
   .add("with likes", () => (
     <ContentText
       totalLikes={12500}

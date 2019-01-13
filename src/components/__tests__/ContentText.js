@@ -49,6 +49,21 @@ describe("ContextText", () => {
     expect(onClick).not.toBeCalled();
   });
 
+  it("should render with a like", () => {
+    const { getByText, queryByTestId } = renderWithRouter(
+      <ContentText
+        totalLikes={1}
+        username="eric.chef"
+        text="This is delicious @beefresto #meat #grilled"
+      />
+    );
+
+    getByText("eric.chef");
+    getByText(/delicious/i);
+    getByText("1 like");
+    expect(queryByTestId("more")).toBeNull();
+  });
+
   it("should render with likes", () => {
     const { getByText, queryByTestId } = renderWithRouter(
       <ContentText

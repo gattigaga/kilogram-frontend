@@ -128,7 +128,10 @@ class ContentText extends Component {
     return (
       <Container data-testid="container" onClick={onClick}>
         {totalLikes && (
-          <Likes>{`${totalLikes}`.replace(separatorPattern, ",")} likes</Likes>
+          <Likes>
+            {`${totalLikes}`.replace(separatorPattern, ",")} like
+            {totalLikes > 1 && "s"}
+          </Likes>
         )}
         <Text>
           <Username
