@@ -8,7 +8,7 @@ import ContentText from "./ContentText";
 import ContentFooter from "./ContentFooter";
 
 const Container = styled.div`
-  padding-bottom: 8px;
+  padding-bottom: 32px;
 `;
 
 const Image = styled.img`
