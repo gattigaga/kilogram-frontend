@@ -5,16 +5,20 @@ import ContentHeader from "../ContentHeader";
 import { renderWithRouter } from "../../helpers/testing";
 
 describe("ContentHeader", () => {
-  it("should render correctly", () => {
-    const { getByText, getByAltText } = renderWithRouter(
+  it("should render correctly and clickable", () => {
+    const { getByText, getByAltText, history } = renderWithRouter(
       <ContentHeader
-        to="/eric"
         username="eric.chef"
         avatar="https://via.placeholder.com/64x64"
       />
     );
 
-    getByText("eric.chef");
-    getByAltText("eric.chef");
+    fireEvent.click(getByText("eric.chef"));
+    expect(history.location.pathname).toBe("/@eric.chef");
+
+    history.replace("/");
+
+    fireEvent.click(getByAltText("@eric.chef"));
+    expect(history.location.pathname).toBe("/@eric.chef");
   });
 });

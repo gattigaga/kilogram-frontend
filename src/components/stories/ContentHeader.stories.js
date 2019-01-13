@@ -10,5 +10,5 @@ storiesOf("ContentHeader", module)
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("default", () => (
-    <ContentHeader to="/eric" avatar={imgAvatar} username="eric.chef" />
+    <ContentHeader avatar={imgAvatar} username="eric.chef" />
   ));

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import "typeface-roboto";
 
 import Avatar from "./Avatar";
@@ -13,7 +14,8 @@ const Container = styled.div`
   padding: 6px 16px;
 `;
 
-const Username = styled.p`
+const Username = styled(Link)`
+  text-decoration: none;
   font-family: Roboto;
   font-size: 14px;
   font-weight: bold;
@@ -37,17 +39,16 @@ const StyledAvatar = styled(Avatar)`
   }
 `;
 
-const ContentHeader = ({ avatar, username, to }) => (
+const ContentHeader = ({ avatar, username }) => (
   <Container>
-    <StyledAvatar src={avatar} alt={username} to={to} />
-    <Username>{username}</Username>
+    <StyledAvatar src={avatar} alt={`@${username}`} to={`/@${username}`} />
+    <Username to={`/@${username}`}>{username}</Username>
   </Container>
 );
 
 ContentHeader.propTypes = {
   avatar: PropTypes.string,
-  username: PropTypes.string,
-  to: PropTypes.string
+  username: PropTypes.string
 };
 
 export default ContentHeader;
