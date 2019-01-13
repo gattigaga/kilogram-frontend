@@ -8,13 +8,15 @@ import { splitBy3 } from "../helpers/formatter";
 
 const Container = styled.div`
   background: white;
-  padding: 6px 16px;
+  padding: 0px 16px;
 `;
 
 const Caption = styled.p`
   font-family: Roboto;
   font-size: 14px;
   color: #999;
+  margin-top: 8px;
+  margin-bottom: 0px;
 
   @media screen and (min-width: 480px) {
     font-size: 16px;
@@ -24,6 +26,8 @@ const Caption = styled.p`
 const Timestamp = styled(Caption)`
   font-size: 10px;
   text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 0px;
 
   @media screen and (min-width: 480px) {
     font-size: 12px;
@@ -55,7 +59,11 @@ const ContentFooter = ({ totalComments, timestamp, onClick }) => {
 
 ContentFooter.propTypes = {
   totalComments: PropTypes.number,
-  timestamp: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  timestamp: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+    PropTypes.number
+  ]),
   onClick: PropTypes.func
 };
 

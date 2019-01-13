@@ -6,7 +6,6 @@ import "typeface-roboto";
 import Avatar from "./Avatar";
 
 const Container = styled.div`
-  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background: white;
   display: flex;

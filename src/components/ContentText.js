@@ -8,7 +8,7 @@ import "typeface-roboto";
 
 const Container = styled.div`
   background: white;
-  padding: 6px 16px;
+  padding: 8px 16px 0px 16px;
 `;
 
 const Likes = styled.p`
@@ -34,9 +34,12 @@ const Text = styled.p`
   }
 `;
 
+const SubText = styled.span`
+  margin-right: 8px;
+`;
+
 const More = styled(Text.withComponent("span"))`
   color: #999;
-  margin-left: 8px;
   cursor: pointer;
 `;
 
@@ -134,7 +137,7 @@ class ContentText extends Component {
           >
             {username}
           </Username>
-          {isExpanded ? parsedText : parsedExcerpt}
+          <SubText>{isExpanded ? parsedText : parsedExcerpt}</SubText>
           {hasLongText && !isExpanded && (
             <More data-testid="more" onClick={this.expand}>
               more
