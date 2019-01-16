@@ -9,11 +9,18 @@ import ContentFooter from "./ContentFooter";
 
 const Container = styled.div`
   padding-bottom: 32px;
+  background: white;
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 70vw;
+  height: 80%;
   object-fit: cover;
   cursor: pointer;
 `;
