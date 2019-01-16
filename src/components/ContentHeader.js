@@ -12,6 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 6px 16px;
+  padding-top: 8px;
 `;
 
 const Username = styled(Link)`
@@ -34,8 +35,8 @@ const StyledAvatar = styled(Avatar)`
   height: 36px;
 
   @media screen and (min-width: 480px) {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 `;
 
