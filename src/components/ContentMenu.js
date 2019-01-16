@@ -14,10 +14,6 @@ const Container = styled.div`
 const FA = styled(FontAwesomeIcon)`
   font-size: 24px;
   cursor: pointer;
-
-  @media screen and (min-width: 480px) {
-    font-size: 32px;
-  }
 `;
 
 const FALike = styled(FA)`
@@ -25,7 +21,7 @@ const FALike = styled(FA)`
   color: ${({ liked }) => (liked ? "#e74c3c" : "black")};
 
   @media screen and (min-width: 480px) {
-    margin-right: 24px;
+    margin-right: 20px;
   }
 `;
 
