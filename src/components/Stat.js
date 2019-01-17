@@ -16,6 +16,10 @@ const Label = styled.p`
   font-size: 12px;
   color: #aaa;
   margin: 0px;
+
+  @media screen and (min-width: 480px) {
+    font-size: 16px;
+  }
 `;
 const Value = styled(Label)`
   color: black;
