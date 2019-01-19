@@ -14,9 +14,11 @@ import {
   faBookmark as farBookmark,
   faUser as farUser
 } from "@fortawesome/free-regular-svg-icons";
+import styled from "styled-components";
 import "normalize.css";
 
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 library.add([
   // Solid
@@ -32,9 +34,17 @@ library.add([
   farUser
 ]);
 
+const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+`;
+
 const App = () => (
   <Router>
-    <Route path="/" component={Home} exact />
+    <Container>
+      <Route path="/" component={Home} exact />
+      <Route path="/@:username" component={Profile} />
+    </Container>
   </Router>
 );
 
