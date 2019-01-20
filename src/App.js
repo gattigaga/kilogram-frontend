@@ -19,6 +19,7 @@ import "normalize.css";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Notifications from "./pages/Notifications";
 
 library.add([
   // Solid
@@ -44,6 +45,7 @@ const App = () => (
     <Container>
       <Route path="/" component={Home} exact />
       <Route path="/@:username" component={Profile} />
+      <Route path="/notifications" component={Notifications} />
     </Container>
   </Router>
 );
